@@ -2,6 +2,7 @@ import { Client } from 'discord.js';
 import info from '../resources/info';
 import { cheerio, readgameID, request } from '../resources/functions/.export.functions';
 import { MessageActionRow, MessageButton } from 'discord.js';
+import { Node } from 'cheerio';
 
 
 export default (client: Client) => {
@@ -38,7 +39,7 @@ export default (client: Client) => {
                             break;
 
                         case 1:
-                            request(`https://stats.warbrokers.io/players/i/${callback.gameID}`, (error, response, html) => {
+                            request(`https://stats.warbrokers.io/players/i/${callback.gameID}`, (error: any, response: { statusCode: number; }, html: string | Buffer | Node | Node[]) => {
                                 if (!error && response.statusCode == 200) {
                                     let $ = cheerio.load(html);
                                     let gameName_long = $("head > title").text().toString();
