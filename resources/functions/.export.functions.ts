@@ -1,10 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import prettyMS from 'pretty-ms';
-import request from 'request';
 import cheerio from 'cheerio';
 const base64 = require('hi-base64');
 const rot = require('rot');
+const request = require('request');
 
 export { fs };
 export { path };
