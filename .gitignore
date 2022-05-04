@@ -1,0 +1,7 @@
+.env
+node_modules
+
+bot-dev.ts
+test.ts
+
+invite.ts

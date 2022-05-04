@@ -1,0 +1,32 @@
+{
+  "name": "AAAA",
+  "version": "4.0.0",
+  "description": "",
+  "main": "bot.ts",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.3.0",
+    "pm2": "^5.2.0",
+    "pretty-ms": "^7.0.1",
+    "request": "^2.88.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "wokcommands": "^1.5.3"
+  },
+  "scripts": {
+    "bot": "ts-node bot.ts",
+    "dev": "ts-node bot-dev.ts"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "_moduleAliases": {
+    "@functions": "./resources/functions/.export.function"
+  },
+  "devDependencies": {
+    "@types/request": "^2.48.8",
+    "hi-base64": "^0.2.1",
+    "rot": "^0.1.0"
+  }
+}
