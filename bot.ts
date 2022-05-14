@@ -18,7 +18,7 @@ const client = new Discord.Client({
 client.login(process.env.DJS_TOKEN);
 
 client.on('ready', async () => {
-    func.logToDiscord(client, `Client is on, User name : ${client.user?.tag}`);
+    func.logToDiscord(client, `Client is on, User name : ${client.user?.tag}`, false);
     console.log("\n");
     console.log("::::::::::::::::::::::::::::::::::::");
     console.log("::                                ::");
@@ -43,7 +43,7 @@ client.on('ready', async () => {
             type: "STREAMING", // PLAYING, WATCHING, LISTENING, STREAMING
             url: "https://youtu.be/4hbf3eybAPk"
         })
-        func.logToDiscord(client, `Ping: ${client.ws.ping}`);
+        func.logToDiscord(client, `Ping: ${client.ws.ping}`, false);
     }, 30000);
 
     new Commands(client, {
