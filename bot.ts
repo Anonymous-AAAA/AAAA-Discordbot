@@ -1,7 +1,7 @@
 import Discord, { Intents } from 'discord.js';
 import Commands from 'wokcommands';
 import dotenv from 'dotenv';
-import { Filepath } from './resources/Filepath';
+import Filepath from './resources/Filepath';
 import * as func from './resources/functions/.export.functions';
 import info from './resources/info';
 
@@ -18,6 +18,7 @@ const client = new Discord.Client({
 client.login(process.env.DJS_TOKEN);
 
 client.on('ready', async () => {
+    func.logToDiscord(client, `Client is on, User name : ${client.user?.tag}`);
     console.log("\n");
     console.log("::::::::::::::::::::::::::::::::::::");
     console.log("::                                ::");
@@ -25,7 +26,7 @@ client.on('ready', async () => {
     console.log("::                                ::");
     console.log("::::::::::::::::::::::::::::::::::::");
     console.log("\n");
-    console.log(`User name :        ${client.user?.tag}!`);
+    console.log(`User name :        ${client.user?.tag}`);
     console.log(`Login platform :   ${info.release.platform}`);
     console.log(`Time :             ${func.TWtime().full}`);
     console.log(`Version :          V ${info.release.botVersion}`);
@@ -42,7 +43,8 @@ client.on('ready', async () => {
             type: "STREAMING", // PLAYING, WATCHING, LISTENING, STREAMING
             url: "https://youtu.be/4hbf3eybAPk"
         })
-    }, 1000);
+        func.logToDiscord(client, `Ping: ${client.ws.ping}`);
+    }, 30000);
 
     new Commands(client, {
         commandsDir: Filepath.commandsDir,

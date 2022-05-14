@@ -1,5 +1,5 @@
 import { fs } from './.export.functions';
-import { Filepath } from '../Filepath'
+import Filepath from '../Filepath';
 
 
 export async function readgameID(authorID: string) {

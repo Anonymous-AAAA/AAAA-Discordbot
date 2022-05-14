@@ -47,22 +47,48 @@ export default {
                 }]
             });
         } else if (args[0] == 'e') {
-            message.channel.send("Encoding . . .").then(msg => {
-                embed.fields.push({
-                    name: `Completed !`,
-                    value: `\`${encodeURI(args[1])}\``,
-                    inline: true
-                });
+            message.channel.send("Decoding . . .").then(msg => {
+                let value = "";
+                let error = false;
+                try {
+                    value = encodeURI(args[1]);
+                    error = false;
+                }
+                catch (err: any) {
+                    value = err.name + ": " + err.message;
+                    error = true;
+                }
+                finally {
+                    embed.color = ((error == true) ? 0xff0000 : 0x4169e1);
+                    embed.fields.push({
+                        name: ((error == true) ? "Error" : "Completed"),
+                        value: `\`${value}\``,
+                        inline: true
+                    });
+                };
                 message.reply({ embeds: [embed] }).then(_ => msg.delete());
             });
         }
         else if (args[0] == 'd') {
             message.channel.send("Decoding . . .").then(msg => {
-                embed.fields.push({
-                    name: `Completed !`,
-                    value: `\`${decodeURI(args[1])}\``,
-                    inline: true
-                });
+                let value = "";
+                let error = false;
+                try {
+                    value = decodeURI(args[1]);
+                    error = false;
+                }
+                catch (err: any) {
+                    value = err.name + ": " + err.message;
+                    error = true;
+                }
+                finally {
+                    embed.color = ((error == true) ? 0xff0000 : 0x4169e1);
+                    embed.fields.push({
+                        name: ((error == true) ? "Error" : "Completed"),
+                        value: `\`${value}\``,
+                        inline: true
+                    });
+                };
                 message.reply({ embeds: [embed] }).then(_ => msg.delete());
             });
         };

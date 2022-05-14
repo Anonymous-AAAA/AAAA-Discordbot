@@ -1,7 +1,7 @@
-import { fs } from './functions/.export.functions'; 1
-import { Filepath } from './Filepath';
+import { fs, path } from './functions/.export.functions';
 
-const version = JSON.parse(Object(fs.readFileSync(Filepath.packagejson))).version;
+
+const version = JSON.parse(Object(fs.readFileSync(path.join(__dirname, "..", "package.json")))).version;
 
 export default {
     release: {
@@ -11,7 +11,7 @@ export default {
     },
     dev: {
         platform: 'Terminal',
-        botVersion: 'Beta 1.0.0',
+        botVersion: 'beta',
         prefix: "$ "
     }
 }

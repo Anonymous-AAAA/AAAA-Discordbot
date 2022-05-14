@@ -6,7 +6,7 @@ import info from '../resources/info';
 export default {
     category: 'tools',
     description: 'use the base64 to encoded/decode text',
-    testOnly: true,
+    testOnly: false,
 
     minArgs: 0,
     maxArgs: 2,
@@ -23,7 +23,7 @@ export default {
             timestamp: new Date(),
         };
 
-        if (!args[0]|| args[0] == 'help' || !args[1]) {
+        if (!args[0] || args[0] == 'help' || !args[1]) {
             message.channel.send({
                 embeds: [{
                     color: "#0099ff",
@@ -60,7 +60,7 @@ export default {
                     value: `\`${base64.encode(args[1])}\``,
                     inline: true
                 });
-                message.reply({embeds: [embed]}).then(_ => msg.delete());
+                message.reply({ embeds: [embed] }).then(_ => msg.delete());
             });
         }
         else if (args[0] == 'd') {
@@ -70,7 +70,7 @@ export default {
                     value: `\`${base64.decode(args[1])}\``,
                     inline: true
                 });
-                message.reply({embeds: [embed]}).then(_ => msg.delete());
+                message.reply({ embeds: [embed] }).then(_ => msg.delete());
             });
         };
     }

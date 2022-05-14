@@ -4,7 +4,7 @@ import info from '../resources/info';
 
 export default (client: Client) => {
     client.on('messageCreate', (message) => {
-        if (message.mentions.users.has("859355917988397058")) {
+        if (message.mentions.users.has("859355917988397058") && message.type != "REPLY") {
             message.reply({
                 embeds: [
                     {

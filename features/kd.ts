@@ -43,7 +43,7 @@ export default (client: Client) => {
                                 if (!error && response.statusCode == 200) {
                                     let $ = cheerio.load(html);
                                     let gameName_long = $("head > title").text().toString();
-                                    let gameName = gameName_long.replace(' - War Brokers', '');
+                                    let gameName = gameName_long.substring(0, gameName_long.length - 14);
                                     let kills = Number($("#player-details-summary-grid > div:nth-child(2) > div.player-details-number-box-value").text().replace(/,/g, "").replace(/\n/g, "").replace(/ /g, ""));
                                     let deaths = Number($("#player-details-summary-grid > div:nth-child(3) > div.player-details-number-box-value").text().replace(/,/g, "").replace(/\n/g, "").replace(/ /g, ""));
                                     let currentKD = (kills / deaths);
@@ -60,10 +60,10 @@ export default (client: Client) => {
                                             new MessageButton()
                                                 .setStyle('LINK')
                                                 .setLabel(`${gameName}`)
-                                                .setURL('https://stats.warbrokers.io/players/i/${callback.gameID}')
+                                                .setURL(`https://stats.warbrokers.io/players/i/${callback.gameID}`)
                                                 .setDisabled(false)
                                         );
-                                    
+
                                     preMessage.delete();
                                     preMessage.channel.send({
                                         content: `${authorName}, 這是您的 KD 數據`,
@@ -104,11 +104,11 @@ export default (client: Client) => {
                                         },
                                         {
                                             name: "**舉例 :**",
-                                            value: "`WB new https://stats.warbrokers.io/players/i/5de3a718bfea714d3b292bcb`",
+                                            value: "`A WB new https://stats.warbrokers.io/players/i/5de3a718bfea714d3b292bcb`",
                                         },
                                         {
                                             name: "***需要幫助 ?***",
-                                            value: "輸入 `WBnew help` 以獲得更多資訊",
+                                            value: "輸入 `A WB help` 以獲得更多資訊",
                                         }
                                     ],
                                     footer: {
@@ -125,7 +125,7 @@ export default (client: Client) => {
                                 embeds: [{
                                     color: "#FF0000",
                                     title: `***Command failed with unexpected error !***`,
-                                    description: '"Please contact `꧁AAAA꧂#2713` if kept facing this error"',
+                                    description: 'Please contact `꧁AAAA꧂#2713` if kept facing this error',
                                     footer: {
                                         text: `Bot \`V ${info.release.botVersion}\``
                                     },
