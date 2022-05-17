@@ -1,4 +1,5 @@
 .env
+.eslintrc.js
 node_modules
 
 bot-dev.ts

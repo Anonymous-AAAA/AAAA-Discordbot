@@ -6,7 +6,7 @@ import info from '../resources/info';
 export default {
     category: 'tools',
     description: 'rot shifting',
-    testOnly: true,
+    testOnly: false,
 
     minArgs: 0,
     maxArgs: 2,

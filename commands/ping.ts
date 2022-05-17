@@ -5,6 +5,7 @@ import info from '../resources/info';
 export default {
     category: 'bot',
     description: 'test if the bot is alive',
+    testOnly: false,
 
     callback: ({ message, client }) => {
         message.channel.send('Caculating ping . . .').then(resultMessage => {

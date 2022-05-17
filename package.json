@@ -1,6 +1,6 @@
 {
   "name": "aaaa",
-  "version": "4.4.2",
+  "version": "4.4.3",
   "description": "",
   "main": "bot.ts",
   "dependencies": {
@@ -29,6 +29,9 @@
   },
   "devDependencies": {
     "@types/request": "^2.48.8",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.15.0",
     "hi-base64": "^0.2.1",
     "rot": "^0.1.0"
   }

@@ -5,7 +5,7 @@ import info from '../resources/info';
 export default {
     category: 'tools',
     description: 'URL encoded/decode text',
-    testOnly: true,
+    testOnly: false,
 
     minArgs: 0,
     maxArgs: 2,

@@ -6,6 +6,7 @@ import info from '../resources/info';
 export default {
     category: 'bot',
     description: 'show info about bot',
+    testOnly: false,
 
     callback: ({ message, client }) => {
         let msg = String();

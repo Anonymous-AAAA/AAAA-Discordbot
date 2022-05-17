@@ -5,6 +5,7 @@ import info from '../resources/info';
 export default {
     category: 'invite',
     description: 'show invite link of bot',
+    testOnly: false,
 
     callback: ({ message }) => {
         message.reply({
