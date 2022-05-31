@@ -18,7 +18,7 @@ const client = new Discord.Client({
 client.login(process.env.DJS_TOKEN);
 
 client.on('ready', async () => {
-    func.logToDiscord(client, `Client is on, User name : ${client.user?.tag}`, false);
+    func.logToDiscord(client, `<@755269122597585018> Client is on, User name : ${client.user?.tag}`, false);
     console.log("\n");
     console.log("::::::::::::::::::::::::::::::::::::");
     console.log("::                                ::");
@@ -52,5 +52,10 @@ client.on('ready', async () => {
 
         typeScript: true,
         testServers: ['864375027935608852'],
+
+        mongoUri: process.env.MONGO_URI,
+        dbOptions: {
+            keepAlive: true
+        },
     }).setDefaultPrefix(info.release.prefix);
 });
