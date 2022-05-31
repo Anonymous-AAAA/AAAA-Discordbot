@@ -22,3 +22,4 @@ export { random } from './random';
 export { readgameID } from './readgameID';
 export { storegameID } from './storegameID';
 export { logToDiscord } from './log';
+export { schema_gameID } from './mongo-schema'

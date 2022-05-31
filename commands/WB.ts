@@ -37,6 +37,10 @@ export default {
                                 embeds: [{
                                     color: "#FF0000",
                                     title: `***Command failed with unexpected error !***`,
+                                    fields: [{
+                                        name: "errorcode",
+                                        value: String(errcode)
+                                    }],
                                     description: 'Please contact `꧁AAAA꧂#2713` if kept facing this error',
                                     footer: {
                                         text: `Bot \`V ${info.release.botVersion}\``
@@ -150,6 +154,10 @@ export default {
                                 embeds: [{
                                     color: "#FF0000",
                                     title: `***Command failed with unexpected error !***`,
+                                    fields: [{
+                                        name: "errorcode",
+                                        value: String(errcode)
+                                    }],
                                     description: 'Please contact `꧁AAAA꧂#2713` if kept facing this error',
                                     footer: {
                                         text: `Bot \`V ${info.release.botVersion}\``

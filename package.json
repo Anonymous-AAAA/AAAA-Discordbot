@@ -1,15 +1,15 @@
 {
   "name": "aaaa",
-  "version": "4.4.3",
+  "version": "4.5.0",
   "description": "",
   "main": "bot.ts",
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.10",
     "discord.js": "^13.6.0",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "hi-base64": "^0.2.1",
-    "mongoose": "^6.3.0",
+    "mongoose": "^6.3.4",
     "pm2": "^5.2.0",
     "pretty-ms": "^7.0.1",
     "request": "^2.88.2",
