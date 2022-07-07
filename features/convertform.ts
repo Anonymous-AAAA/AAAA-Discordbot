@@ -17,8 +17,8 @@ export default (client: Client) => {
             array[index].value = obj.value.replace(/:dynoSuccess:/g, "<:dynoSuccess:994138811535720528>").replace(/:Neutral:/g, "<:Neutral:994199013681283154>");
         });
         embed[0].fields.unshift({
-            value: "User ID",
-            name: `${embed[0].footer?.text.replace("User ID: ", "")}`,
+            name: "User ID",
+            value: `${embed[0].footer?.text.replace("User ID: ", "")}`,
             inline: false
         });
         embed[0].footer = null;
