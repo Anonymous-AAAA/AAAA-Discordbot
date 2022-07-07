@@ -7,11 +7,12 @@ export default {
     release: {
         platform: 'Heroku',
         botVersion: version,
-        prefix: "A "
+        prefix: "A ",
+        convertMessyInput: "1.0.0",
     },
     dev: {
         platform: 'Terminal',
         botVersion: 'beta',
-        prefix: "$ "
+        prefix: "$ ",
     }
 }

@@ -1,7 +1,7 @@
 ///Measure the similarity
 /*Usage*\
 $Type: string, string, number
-@Type: number
+@Type: string
 └>Number(similarity)
 \*/
 export function similar(s: string, t: string, f?: number) {

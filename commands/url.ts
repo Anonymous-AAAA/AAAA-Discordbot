@@ -47,7 +47,7 @@ export default {
                 }]
             });
         } else if (args[0] == 'e') {
-            message.channel.send("Decoding . . .").then(msg => {
+            message.channel.send("Eecoding . . .").then(msg => {
                 let value = "";
                 let error = false;
                 try {
